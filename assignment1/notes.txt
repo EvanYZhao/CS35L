@@ -1,0 +1,47 @@
+Lab Section 1.4:
+8. Found 8 instances of <ol>
+
+Lab Section 1.5:
+1. sh and type are located in /usr/bin while sleep is located in /usr/local/cs/bin/sleep
+
+2. sed: A stream editor for filtering and transforming text
+   seq: Prints a sequence of numbers
+
+3. When executing emacs, /usr/loca/cs/emacs-28.2/bin/emacs-28.2 is the file that is actually executed upon calling the symlink
+
+4. Plain GCC: 12.2.0
+   /usr/bin/gcc: 8.5.0
+GCC must have two different version installed so that it stays functional during periodic code deployment and version upgrades. The user most likely gets defaulted to the /usr/bin/gcc version whenever
+plain GCC gets updated
+
+5. Sets the user id on executiona nd gives the user execution privileges while revoking others writing privileges.
+
+6. 0
+
+7. 0
+
+8. /usr/lib64/pygtk/2.0/demos/appwindow.py
+   Date: 2011/04/01
+
+9. transpose-chars
+   transpose-lines
+   transpose-paragraph
+   transpose-regions
+   transpose-sentences
+   transpose-sexps
+   transpose-word
+
+10. Yank takes the last killed line/copied line and pastes it back into the doc. The keystroke sequence is C-y
+
+11. ls -l lists mostly the same contents as dired mode except dired shows the current (.) and parent (..) directory as options - which uses more data blocks - and tells you how many blocks are
+available.
+
+12. PID 1
+
+Homework:
+Command 1: This command turns all non-alphabetical characters into newlines in the html file since the -c flag usees the complement of all alphabetical characters in both upper and lowercase
+Command 2: This command squashes all the newlines into one newline at the very top, meaning subsequent words will not have spaces between them due to the -s flag on the tr command
+Command 3: This command sorts the newly filtered list made from command 2 since getting rid of the punctuation leaves the list unordered and requires a resorting to get a proper alphabetically-ordered list of words
+Command 4: Removes any duplicate words that may be encountered during the search process due to the -u flag on the sort command
+Command 5: Returns 3 columns where column 1 is words unique to the filtered list from command 4, column 2 is words unique to the original sorted.words file, and column 3 are the words that both the filtered list and sorted.words share in common
+Command 6: Returns only 1 column with the words unique to the filtered list created from command 4 in comparison to the sorted.words file due to the -23 flag on the comm command

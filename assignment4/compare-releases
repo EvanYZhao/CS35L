@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+version1=$1
+version2=$2
+
+git diff $version1 $version2

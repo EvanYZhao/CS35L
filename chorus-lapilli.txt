@@ -1,0 +1,39 @@
+Section 1
+
+- Copied tic-tac-toe code
+
+- Created counter state to track when board is "full"
+
+- Created two more click handlers for handling piece moving
+
+- Branched between 3 click handlers based on board status and count
+
+- Created another boolean state that tracks if user has chosen first piece
+
+- Passed counter, 2 click handlers, and boolean as props to Square
+
+- Implemented logic that checks if a move is valid or not
+
+- Logic above checks for adjacency and if middle piece exists
+
+- If middle piece exists, emulates board to check if move would win
+
+- Added additional instructions that tell users what to do during play
+
+- Added restarting of turn if user makes an invalid move
+
+- Clicking a square to move would visually show user a "1" where they clicked
+
+Section 2
+
+1. untar the tarball and cd into the chorus-lapilli directory
+
+2. use npm install to install all dependencies
+
+3. use npm start (in chorus-lapilli) to start in browser
+
+4. Follow instructions that appear below grid while playing
+
+5. Enjoy!
+
+chorus-lapilli-0.1.0.tgz

@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+hashes=($(git log --pretty=format:"%h" -2))
+
+git diff ${hashes[0]} ${hashes[1]}

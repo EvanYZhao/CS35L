@@ -1,0 +1,25 @@
+EXERCISE 2.1
+A. (*(expt 2 (- 607 1)) (- (expt 2 607) 1))
+
+B. (logb (*(expt 2 (- 607 1)) (- (expt 2 607) 1)))
+
+C. C-h C-h k does the same thing as C-h k by allowing you to input a keystroke and receive documentation + info about that specific keystroke. Similar to C-h b except C-h b is a list of keystrokes rather than info about a specific keystrokes
+
+D. C-h k M-SPC gives info on what the M-SPC command does in a separate buffer. M-SPC puts exactly one space at the point, condensing all spaces around it to the point.
+
+HOMEWORK
+A. An indexing error is raised because the script cannot index a line that does not exist.
+
+B. Syntax error occurs because the new version of python (python3) removed iteration over parameters which used to be valid in python2 for exception catching.
+
+BENCHMARKING
+
+Coreutils Shuf: .064s
+
+/usr/bin/python3 (pre 3.11): .113s
+
+/usr/local/cs/bin/python3 (post 3.11): .042s
+
+CPU: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+
+OS-Version: 8.5

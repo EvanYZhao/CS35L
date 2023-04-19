@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat $1 | tr -cd "[A-Za-z0-9,./!&'-]|[:space:]" | tr -s "[:space:]" "\n" | sort -u | comm -23 - sorted.words

@@ -1,0 +1,34 @@
+- I openefd the Makefile in emacs and added a check target
+  - ./randall 1024 | wc -c | grep -q '^1024$$'
+- I modularized the function definitions (remove static keyword)
+  - static: makes associated value private to local file
+- Changed Makefile to compile all newly created .c files
+- Tested the resulting .c file with the Makefile check target
+- Added -i and -o options, default options set using char* types
+- use getopt. argv[optind] return nbytes arg.
+  - argc = number of args passed in cmd line
+  - argv = array of corresponding arg values passed in cmd line
+- Implemeneted mrand48_r using drand_data struct and rand_state
+- Conditionally checked for what randomization gen to use(output.c)
+- Dynamically allocated a buffer of user-specified nbytes size
+  - nbytes not divisible by 8? fill rest of buffer using char* casting
+- Check if malloc() return NULL ptr and throw error
+- Free malloc() space and finalize() initalization()
+- write() doesn't end at end of buffer so implmented own boundary checker
+  - (nbytes - written_bytes) < value ? (nbytes - written_bytes) : value;
+
+TIMING CHECK (median of three trials of sum of user and system times)
+time dd if=/dev/urandom ibs=8192 obs=8192 count=16384 > /dev/null
+.907 seconds
+
+time ./randall 133562368
+3.86 seconds
+
+time ./randall 133562368
+4.194 seconds
+
+time ./randall -o 8192 133562368
+2.928 seconds
+
+time ./randall -i /dev/urandom -o 8192 133562368
+1.307 seconds

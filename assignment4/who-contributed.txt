@@ -1,0 +1,27 @@
+The statement was originally introduced by Arthur David Olson on December 21, 1995 in commit hash c12b432741.
+
+Steps I took to find this:
+1. git log -p > completelog.txt
+   - This command gave a complete log of all the commmits in the history of the repo along with all specific changes made during each commit
+2. emacs completelog.txt
+   - I entered the file containing all the contents of the commits using the emacs text editor to take advantage of emacs search functionality
+3. C-s "Even newspaper reports presents contradictory information."
+   - I used the I-search funcitonality built into emacs to find the earliest occurrence of the statement since git log is in reverse chronological order
+4. C-r "commit"
+   - I then used the reverse I-search functionality to find the commit that the change belonged to
+5. Copied the commit id onto a sticky note
+6. C-x C-c
+   - Exit the emacs editor
+7. git show <commit id I copied down>
+   - This gave me more information about the specific commit, including the author and what file this line resides in (northamerica)
+8. git blame northamerica > completelog.txt
+   - Put the contents of most recent commit information about each line in the northamerica file into the completelog.txt
+9. emacs completelog.txt
+   - Entered the completelog.txt file in emacs text editor again for I-search functionality
+10. C-s <Statement-in-question>
+    - Searched for the statement in question to find the most recent commit that was done to change the line
+11. Discover that most recent commit was done by professor Eggert in 2013
+
+
+Results:
+I learned that the commit that contained the line was originally introduced by Arthur David Olson in 12-21-1995 with improper citation, causing for copyright infringement (grave accents). After further digging, I also discovered that the most recent commit to the line retained the same line but within the correct citation style (double quotes) and was done by Paul Eggert in 2013. Ultimately, this tells me that Olson's error was fixed by Eggert a decade and a half later in order to comply with copyright policy.

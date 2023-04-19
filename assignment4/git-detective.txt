@@ -1,0 +1,22 @@
+Commits:
+bcf22f29df87f
+	7f8a6caee5 (merged)
+	92481d1b26 (merged)
+19118cb8570e
+	a215853545 (merged)
+	92481d1b26 (merged)
+92481d1b26
+0b55d930a69692 (main commit where explicitly fixed)
+
+Methodology:
+1. git tag -1 v2.39.0
+   - Listed the tag "v2.39.0" (to ensure it exists)
+2. git tag -l v2.38.0
+   - Listed the tag "v2.38.0" (to ensure it exists)
+3. git log v2.39.0..v2.38.0 > 2.38-2.39.diff
+   - Created a diff file to show all the new commits from the old version to the new version where the patch was applied for the segfault
+4. emacs 2.38-2.39.diff
+   - Entered the diff file with emacs editor for extra functionality
+5. C-s "segmentation fault"
+   - Searched all the commits for the keyword "segmentation fault" and wrote down the commit ids
+6. Discovered most relevant commit is the one that came first chronologically where the commit message explicitly states that the read-only repo segfault error was addressed

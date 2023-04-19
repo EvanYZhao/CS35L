@@ -1,0 +1,11 @@
+Professor Eggert has the following branches:
+maint
+master
+next
+seen
+todo
+
+Whereas I only have the following branch:
+master
+
+This tells me that Professor Eggert has likely become a trusted developer who regularly commits to the git mirror repo since he has access to workflow branches as opposed to just the master branch

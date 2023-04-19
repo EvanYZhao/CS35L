@@ -1,0 +1,50 @@
+#!/usr/bin/python3
+
+### IMPORTANT ###
+### input file must be run with the following command: git log A..B --pretty=fuller | grep 'CommitDate:'
+import argparse, sys
+
+class tzcount:
+    # Initialize the object with the last four files in the line
+    # and also with a dictionary (will be used later)
+    def __init__(self, infile):
+        self.lines=[]
+        self.counter={}
+        if infile:
+            for line in infile:
+                self.lines.append(line[-6:].strip())
+        else:
+            print("No input found")
+            exit()
+    
+    # Counts the occurrences of each timezone 
+    # and puts count into a dictionary object.
+    # Then proceeds to print all timezones + occurrences
+    def results(self):
+        for tz in self.lines:
+            if tz in self.counter:
+                self.counter[tz] += 1
+            else:
+                self.counter[tz] = 1
+        
+        for key in self.counter:
+            print(str(key), str(self.counter[key]))
+
+def main():
+    parser = argparse.ArgumentParser(description="Returns the number of commits made in a repository from all timezones")
+
+    #Adding infile argument to parser
+    parser.add_argument("infile", help="enter a file to read from", default=sys.stdin, nargs="?")
+
+    #Parsing the args (Namespace: infile)
+    args = parser.parse_args()
+
+    #Creation of tzcount object
+    obj = tzcount(args.infile)
+
+    #Method that displays desired output
+    obj.results()
+
+
+if __name__ == "__main__":
+    main()
